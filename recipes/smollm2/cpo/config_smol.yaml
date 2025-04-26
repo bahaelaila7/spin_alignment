@@ -1,4 +1,5 @@
 # Model arguments
+#model_name_or_path: HuggingFaceTB/SmolLM2-360M # we use this script for the 135M model too
 model_name_or_path: HuggingFaceTB/SmolLM2-360M # we use this script for the 135M model too
 model_revision: main
 tokenizer_name_or_path: HuggingFaceTB/SmolLM2-360M-Instruct # Custom tokenizer with <|im_start|> and <|im_end|> tokens
