@@ -24,6 +24,9 @@ preprocessing_num_workers: 30
 # DPOTrainer arguments
 use_peft: true
 use_dora: true
+load_in_8bit: true
+loss_type: simpo
+cpo_alpha: 1.0
 attn_implementation: flash_attention_2
 bf16: true
 beta: 0.5
@@ -35,7 +38,7 @@ gradient_accumulation_steps: 8
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: False
-hub_model_id: smollm2-360M-cpo
+hub_model_id: smollm2-360M-cposimpo-8bitdora
 learning_rate: 1.0e-6
 log_level: info
 logging_steps: 10
@@ -44,7 +47,7 @@ max_length: 1024
 max_prompt_length: 512
 num_train_epochs: 2
 optim: adamw_torch
-output_dir: data/smollm2-360M-cpo
+output_dir: data/smollm2-360M-cposimpo-8bitdora
 per_device_train_batch_size: 2
 per_device_eval_batch_size: 4
 push_to_hub: true
