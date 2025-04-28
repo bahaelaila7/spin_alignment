@@ -1,5 +1,8 @@
 # Model arguments
-model_name_or_path: loubnabnl/smollm2-360M-sft # we use this script for the 135M model too
+#model_name_or_path: loubnabnl/smollm2-360M-sft # we use this script for the 135M model too
+model_name_or_path: assskelad/smollm2-360M-sft # we use this script for the 135M model too
+model_revision: main
+tokenizer_name_or_path: HuggingFaceTB/SmolLM2-360M-Instruct # Custom tokenizer with <|im_start|> and <|im_end|> tokens
 torch_dtype: bfloat16
 
 # Data training arguments
@@ -15,6 +18,7 @@ preprocessing_num_workers: 12
 # DPOTrainer arguments
 use_peft: true
 use_dora: true
+attn_implementation: flash_attention_2
 bf16: true
 beta: 0.5
 do_eval: true
@@ -25,7 +29,7 @@ gradient_accumulation_steps: 8
 gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: False
-hub_model_id: smollm2-360M-dpo
+hub_model_id: smollm2-360M-dpo-dora
 learning_rate: 1.0e-6
 log_level: info
 logging_steps: 10
@@ -34,7 +38,7 @@ max_length: 1024
 max_prompt_length: 512
 num_train_epochs: 2
 optim: adamw_torch
-output_dir: data/smollm2-360M-dpo
+output_dir: data/smollm2-360M-dpo-dora
 per_device_train_batch_size: 2
 per_device_eval_batch_size: 4
 push_to_hub: true
