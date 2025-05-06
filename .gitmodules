@@ -4,3 +4,6 @@
 [submodule "trl_mine"]
 	path = trl
 	url = git@github.com:bahaelaila7/trl
+[submodule "spin"]
+	path = spin
+	url = git@github.com:bahaelaila7/SPIN.git
